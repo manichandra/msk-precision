@@ -1,0 +1,198 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: |
+  Full-stack architecture, folder structure, deployment flow, and content strategy
+  for the MSK Precision Engineering Group static site (Next.js 14 App Router).
+
+  Initial deployment: GitHub Pages using `next export`.
+  Later transition: AWS Amplify Hosting with SSR, dynamic contact form, and analytics.
+
+globs:
+  - "app/**"
+  - "pages/**"
+  - "components/**"
+  - "lib/**"
+  - "public/**"
+  - "styles/**"
+alwaysApply: true
+---
+
+## 🧱 Top-Level Project Structure
+
+root/
+│
+├── app/ # App Router pages & layouts
+│ ├── page.tsx # Home page
+│ ├── layout.tsx # Root layout, font & theme provider
+│ ├── about/ # Static route: About MSK
+│ ├── contact/ # Static contact page
+│ ├── precision-works/ # Division 1
+│ ├── engineering/ # Division 2
+│ ├── training/ # Division 3
+│ └── blog/ # Optional: MDX-based blog
+│
+├── components/ # Reusable UI components
+│ ├── shared/ # Navbar, Footer, Layout
+│ ├── homepage/ # Hero, DivisionCards, Testimonials
+│ └── divisions/ # PrecisionWorksCard, CFDSection, TrainingBlock, etc.
+│
+├── content/ # Optional: static .mdx for blog or curriculum
+│ └── blog/
+│
+├── lib/ # Shared logic / utilities
+│ ├── api.ts # Fetch functions (future SSR/AWS use)
+│ ├── contact.ts # Form validation + email logic (client now, server later)
+│ └── data.ts # Static data (used in cards, timelines, etc.)
+│
+├── public/ # Static assets (logos, images, downloads)
+│
+├── styles/
+│ └── globals.css # Tailwind base layers + custom variables
+│
+├── next.config.js # App config (output: export, basePath)
+├── tsconfig.json
+├── tailwind.config.ts
+├── package.json
+└── .cursor/ # Cursor rules live here
+
+markdown
+Copy
+Edit
+
+---
+
+## 🔁 Architecture & State Model
+
+### 🧠 Rendering
+- **Now**: `next export` creates pre-rendered HTML + JS. No SSR. No dynamic API routes.
+- **Later** (Amplify): switch to SSR with server actions, `/api/` routes
+
+### ⚙️ State handling
+
+| Location        | Example                       | State Type        |
+|----------------|-------------------------------|-------------------|
+| Server-side     | N/A in static mode            | Static JSON/props |
+| Client-side     | Contact form, mobile nav      | `useState`, `useRef`, `useForm` (Zod) |
+| Shared Config   | `lib/data.ts`                 | Static content    |
+| Future SSR      | `lib/api.ts`                  | Fetched at build or runtime via Amplify |
+
+---
+
+## 🧩 Route Responsibilities
+
+| Path               | File                         | Purpose                                                   |
+|--------------------|------------------------------|-----------------------------------------------------------|
+| `/`                | `app/page.tsx`               | Home: Hero, divisions overview, CTA                       |
+| `/precision-works` | `app/precision-works/page.tsx`| Division: CNC, QA, metrology, 3D printing                |
+| `/engineering`     | `app/engineering/page.tsx`    | Division: CFD, FEA, multi-physics                         |
+| `/training`        | `app/training/page.tsx`       | Division: CAD, CNC, 3D print training programs            |
+| `/about`           | `app/about/page.tsx`          | Company story, mission, leadership                        |
+| `/contact`         | `app/contact/page.tsx`        | Static form (to be dynamic later with SES)                |
+| `/blog`            | `app/blog/page.tsx`           | Optional MDX articles                                     |
+
+---
+
+## ⚙️ Component Strategy
+
+- Grouped by **page/section**
+- Use Tailwind CSS utilities + `shadcn/ui`
+- Animate with `framer-motion`
+- Every page = fade-in layout with scroll sections
+
+**Example:**
+```tsx
+<motion.div initial={{opacity: 0}} animate={{opacity: 1}}>
+  <SectionTitle title="CNC Machining" />
+  <p>We use 3-axis and 5-axis Haas machines...</p>
+</motion.div>
+🔐 Contact Form (2 Modes)
+Now (GitHub Pages):
+
+Uses lib/contact.ts for Zod validation
+
+Submits to Google Forms or custom service (static-only)
+
+Later (AWS Amplify):
+
+Form POSTs to /api/contact/route.ts
+
+Uses AWS SES to send email
+
+Server Action (Next.js + Amplify)
+
+🚀 Deployment Flow
+✅ GitHub Pages (now)
+Add to next.config.js:
+
+js
+Copy
+Edit
+output: 'export',
+basePath: '/<repo-name>',
+images: { unoptimized: true },
+Add to package.json:
+
+json
+Copy
+Edit
+"scripts": {
+  "build": "next build",
+  "export": "next export",
+  "deploy": "npm run build && npm run export && gh-pages -d out"
+}
+Deploy:
+
+bash
+Copy
+Edit
+npm install --save-dev gh-pages
+npm run deploy
+🛠 AWS Amplify Hosting (future)
+Remove output: export
+
+Add amplify.yml:
+
+yaml
+Copy
+Edit
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - yarn install
+    build:
+      commands:
+        - yarn build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - '**/*'
+Amplify supports server actions, /api/ routes, RUM analytics
+
+Integrate contact form with AWS SES, save leads to DynamoDB or RDS
+
+✨ Cursor snippets
+@new-page
+Scaffold:
+
+bash
+Copy
+Edit
+app/<slug>/page.tsx
+app/<slug>/page.test.tsx
+Includes motion animation, layout wrapper, metadata export
+
+@hero
+Create full-screen hero section with:
+
+Gradient background
+
+CTA button from shadcn
+
+Split left/right layout with image
+
