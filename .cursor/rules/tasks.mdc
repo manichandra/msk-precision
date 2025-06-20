@@ -41,7 +41,7 @@ alwaysApply: false          # show only when you open this file explicitly
 |----|-------|-------------|-----------|
 | ✅ task-06 | Scaffold Home route | Create empty `app/page.tsx`. | Visiting `/` shows blank page, no console errors. |
 | ✅ task-07 | Add Hero section | `components/home/Hero.tsx` with headline **"Precision in Every Dimension"**, sub-tagline from DPR, CTA "Explore Capabilities"; fade-in with framer-motion. | Hero fills viewport; CTA scrolls to next section. |
-| task-08 | Add Division cards | `components/home/DivisionCards.tsx`; map static array: Precision Works / Engineering / Training with blurbs. | Three responsive, clickable cards render. |
+| ✅ task-08 | Add Division cards | `components/home/DivisionCards.tsx`; map static array: Precision Works / Engineering / Training with blurbs. | Three responsive, clickable cards render. |
 | task-09 | Add "Why MSK" section | Three bullets: **Quality-first ISO workflow**, **AI-driven design insight**, **Integrated training pipeline**. | Section shows beneath cards. |
 
 ### ⚙️  Precision Works Page (`/precision-works`)
