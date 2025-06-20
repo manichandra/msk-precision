@@ -57,7 +57,7 @@ alwaysApply: false          # show only when you open this file explicitly
 | id | title | description | done_when |
 |----|-------|-------------|-----------|
 | ✅ task-13 | Create route | `app/engineering/page.tsx`. | Route reachable. |
-| task-14 | Services sections | Headings & copy for CFD, FEA, AI-optimisation; placeholder images. | Three stacked sections render. |
+| ✅ task-14 | Services sections | Headings & copy for CFD, FEA, AI-optimisation; placeholder images. | Three stacked sections render. |
 | task-15 | Industries list & CTA | Bullet list "Aerospace / Automotive / Marine / Medical" + Contact button: placeholder images | List & CTA visible. |
 
 ### 🎓  Training Page (`/training`)

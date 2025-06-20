@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ServicesSections from '@/components/engineering/ServicesSections';
+import IndustriesCTA from '@/components/engineering/IndustriesCTA';
 
 export const metadata: Metadata = {
   title: 'Engineering Services - MSK Precision Engineering Group',
@@ -20,6 +21,7 @@ export default function EngineeringPage() {
       </div>
       
       <ServicesSections />
+      <IndustriesCTA />
       
       {/* Content for subsequent tasks will be added here */}
     </div>
