@@ -24,7 +24,7 @@ alwaysApply: false          # show only when you open this file explicitly
 
 | id | title | description | done_when |
 |----|-------|-------------|-----------|
-| task-01 | Initialise Next.js workspace | Run `npx create-next-app@latest msk-site --ts --eslint --app`; commit scaffold. | `npm run dev` renders Next welcome screen. |
+| ✅ task-01 | Initialise Next.js workspace | Run `npx create-next-app@latest msk-site --ts --eslint --app`; commit scaffold. | `npm run dev` renders Next welcome screen. |
 | task-02 | Install UI dependencies | Add Tailwind CSS, shadcn/ui, lucide-react, framer-motion; configure Tailwind. | Importing `<Button>` from shadcn/ui renders styled button. |
 | task-03 | Add corporate font | Use `next/font/google` to load **Inter 400 & 700** in `app/layout.tsx`. | Headings show Inter (verify in dev-tools). |
 
