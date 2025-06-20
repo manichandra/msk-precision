@@ -49,7 +49,7 @@ alwaysApply: false          # show only when you open this file explicitly
 | id | title | description | done_when |
 |----|-------|-------------|-----------|
 | ✅ task-10 | Create route | `app/precision-works/page.tsx` + metadata. | Route reachable. |
-| task-11 | Services grid | Two-column list: CNC Turning (×5), CNC VMC 3-axis (×3), Industrial 3-D printers (×3), CMM & QA lab; show tolerances ±5 µm. | Grid with four cards visible. |
+| ✅ task-11 | Services grid | Two-column list: CNC Turning (×5), CNC VMC 3-axis (×3), Industrial 3-D printers (×3), CMM & QA lab; show tolerances ±5 µm. | Grid with four cards visible. |
 | task-12 | Capability specs | Bullet list of max part size, materials (MS, Al, SS), served industries. | Specs block renders below grid. |
 
 ### 🧠  Engineering Page (`/engineering`)

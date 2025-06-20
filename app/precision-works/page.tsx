@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ServicesGrid from '@/components/precision-works/ServicesGrid';
+import CapabilitySpecs from '@/components/precision-works/CapabilitySpecs';
 
 export const metadata: Metadata = {
   title: 'Precision Works - MSK Precision Engineering Group',
@@ -20,6 +21,7 @@ export default function PrecisionWorksPage() {
       </div>
       
       <ServicesGrid />
+      <CapabilitySpecs />
       
       {/* Content for subsequent tasks will be added here */}
     </div>
