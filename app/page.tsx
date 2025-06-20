@@ -1,10 +1,12 @@
 import Hero from "@/components/home/Hero";
+import DivisionCards from "@/components/home/DivisionCards";
 
 export default function Home() {
   return (
     <div>
       <Hero />
-      {/* Ready for Division cards and other sections */}
+      <DivisionCards />
+      {/* Ready for "Why MSK" section and other components */}
     </div>
   );
 }
