@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import ServicesGrid from '@/components/precision-works/ServicesGrid';
 
 export const metadata: Metadata = {
   title: 'Precision Works - MSK Precision Engineering Group',
@@ -16,8 +17,11 @@ export default function PrecisionWorksPage() {
         <p className="text-xl text-muted-foreground">
           Advanced CNC machining with 5-axis capabilities, industrial 3D printing, and comprehensive quality assurance.
         </p>
-        {/* Content will be added in subsequent tasks */}
       </div>
+      
+      <ServicesGrid />
+      
+      {/* Content for subsequent tasks will be added here */}
     </div>
   );
 } 
