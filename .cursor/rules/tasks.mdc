@@ -1,0 +1,104 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: |
+  MSK Precision Engineering Group – MVP build checklist.
+  Each task is atomic, has a clear success criterion, and can be delegated
+  sequentially to an engineering LLM.  Initial deployment target is GitHub
+  Pages (`next export`); later production target is AWS Amplify.
+alwaysApply: false          # show only when you open this file explicitly
+---
+
+## 🚧 MVP TASK LIST
+
+> **Legend**  
+> • **id** – stable handle for automation  
+> • **title** – short imperative  
+> • **description** – what to build / content to include  
+> • **done_when** – objective completion test  
+
+### 🏗  Project Setup
+
+| id | title | description | done_when |
+|----|-------|-------------|-----------|
+| task-01 | Initialise Next.js workspace | Run `npx create-next-app@latest msk-site --ts --eslint --app`; commit scaffold. | `npm run dev` renders Next welcome screen. |
+| task-02 | Install UI dependencies | Add Tailwind CSS, shadcn/ui, lucide-react, framer-motion; configure Tailwind. | Importing `<Button>` from shadcn/ui renders styled button. |
+| task-03 | Add corporate font | Use `next/font/google` to load **Inter 400 & 700** in `app/layout.tsx`. | Headings show Inter (verify in dev-tools). |
+
+### 🖼  Shared Layout
+
+| id | title | description | done_when |
+|----|-------|-------------|-----------|
+| task-04 | Build Navbar | `components/shared/Navbar.tsx`; desktop links (Home / Precision Works / Engineering / Training / About / Contact); mobile toggle via `useState`. | Links navigate; mobile menu opens & closes. |
+| task-05 | Build Footer | `components/shared/Footer.tsx`; © notice + tag-line “Precision in Every Dimension” + placeholder e-mail. | Footer visible on every route. |
+
+### 🏠  Home Page (`/`)
+
+| id | title | description | done_when |
+|----|-------|-------------|-----------|
+| task-06 | Scaffold Home route | Create empty `app/page.tsx`. | Visiting `/` shows blank page, no console errors. |
+| task-07 | Add Hero section | `components/home/Hero.tsx` with headline **“Precision in Every Dimension”**, sub-tagline from DPR, CTA “Explore Capabilities”; fade-in with framer-motion. | Hero fills viewport; CTA scrolls to next section. |
+| task-08 | Add Division cards | `components/home/DivisionCards.tsx`; map static array: Precision Works / Engineering / Training with blurbs. | Three responsive, clickable cards render. |
+| task-09 | Add “Why MSK” section | Three bullets: **Quality-first ISO workflow**, **AI-driven design insight**, **Integrated training pipeline**. | Section shows beneath cards. |
+
+### ⚙️  Precision Works Page (`/precision-works`)
+
+| id | title | description | done_when |
+|----|-------|-------------|-----------|
+| task-10 | Create route | `app/precision-works/page.tsx` + metadata. | Route reachable. |
+| task-11 | Services grid | Two-column list: CNC Turning (×5), CNC VMC 3-axis (×3), Industrial 3-D printers (×3), CMM & QA lab; show tolerances ±5 µm. | Grid with four cards visible. |
+| task-12 | Capability specs | Bullet list of max part size, materials (MS, Al, SS), served industries. | Specs block renders below grid. |
+
+### 🧠  Engineering Page (`/engineering`)
+
+| id | title | description | done_when |
+|----|-------|-------------|-----------|
+| task-13 | Create route | `app/engineering/page.tsx`. | Route reachable. |
+| task-14 | Services sections | Headings & copy for CFD, FEA, AI-optimisation; placeholder images. | Three stacked sections render. |
+| task-15 | Industries list & CTA | Bullet list “Aerospace / Automotive / Marine / Medical” + Contact button. | List & CTA visible. |
+
+### 🎓  Training Page (`/training`)
+
+| id | title | description | done_when |
+|----|-------|-------------|-----------|
+| task-16 | Create route | `app/training/page.tsx`. | Route reachable. |
+| task-17 | Program cards | Four cards: CAD/CAM, CNC workshop, 3-D printing, Python-for-Engineers; include duration & mode tags. | Cards render in grid. |
+| task-18 | Audience & CTA | Paragraph for audience + “Enroll” button. | CTA visible under grid. |
+
+### 🏢  About Page (`/about`)
+
+| id | title | description | done_when |
+|----|-------|-------------|-----------|
+| task-19 | Create route | `app/about/page.tsx`. | Route reachable. |
+| task-20 | Company story | Intro: founded 2019 in Telangana, mission statement. | Story paragraph renders. |
+| task-21 | Timeline component | Milestones: 2019 workshop launch, 2025 consultancy/training launch. | Vertical timeline shows milestones. |
+| task-22 | Leadership card | Founder bio snippet + placeholder photo. | Card appears. |
+
+### ✉️  Contact Page (`/contact`)
+
+| id | title | description | done_when |
+|----|-------|-------------|-----------|
+| task-23 | Build contact form | Name, Email, Message inputs; static address “4-17/1 Cherlapally, Hyderabad 501301”; map placeholder. | Inputs accept text; address block visible. |
+
+### 📦  Shared Data & Nav
+
+| id | title | description | done_when |
+|----|-------|-------------|-----------|
+| task-24 | Extract division data | Move titles/blurbs to `lib/data.ts`; DivisionCards map over it. | Home reads from `lib/data.ts`. |
+| task-25 | Wire Navbar links | Ensure all links route correctly. | Manual click test passes. |
+
+### 🚀  Export & Deploy
+
+| id | title | description | done_when |
+|----|-------|-------------|-----------|
+| task-26 | Configure GitHub Pages | `next.config.js` with `output:'export'`, proper `basePath`; add `"deploy"` script using `gh-pages`. | `npm run deploy` pushes `gh-pages` branch with no errors. |
+
+### ✅  QA Pass
+
+| id | title | description | done_when |
+|----|-------|-------------|-----------|
+| task-27 | Lighthouse smoke test | Run Lighthouse on local export; target ≥90 Perf/SEO/A11y; save screenshot to `/public/docs/`. | Screenshot exists and scores meet targets. |
+
