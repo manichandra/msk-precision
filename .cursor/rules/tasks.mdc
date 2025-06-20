@@ -33,16 +33,16 @@ alwaysApply: false          # show only when you open this file explicitly
 | id | title | description | done_when |
 |----|-------|-------------|-----------|
 | ✅ task-04 | Build Navbar | `components/shared/Navbar.tsx`; desktop links (Home / Precision Works / Engineering / Training / About / Contact); mobile toggle via `useState`. | Links navigate; mobile menu opens & closes. |
-| task-05 | Build Footer | `components/shared/Footer.tsx`; © notice + tag-line "Precision in Every Dimension" + placeholder e-mail. | Footer visible on every route. |
+| ✅ task-05 | Build Footer | `components/shared/Footer.tsx`; © notice + tag-line "Precision in Every Dimension" + placeholder e-mail. | Footer visible on every route. |
 
 ### 🏠  Home Page (`/`)
 
 | id | title | description | done_when |
 |----|-------|-------------|-----------|
 | task-06 | Scaffold Home route | Create empty `app/page.tsx`. | Visiting `/` shows blank page, no console errors. |
-| task-07 | Add Hero section | `components/home/Hero.tsx` with headline **“Precision in Every Dimension”**, sub-tagline from DPR, CTA “Explore Capabilities”; fade-in with framer-motion. | Hero fills viewport; CTA scrolls to next section. |
+| task-07 | Add Hero section | `components/home/Hero.tsx` with headline **"Precision in Every Dimension"**, sub-tagline from DPR, CTA "Explore Capabilities"; fade-in with framer-motion. | Hero fills viewport; CTA scrolls to next section. |
 | task-08 | Add Division cards | `components/home/DivisionCards.tsx`; map static array: Precision Works / Engineering / Training with blurbs. | Three responsive, clickable cards render. |
-| task-09 | Add “Why MSK” section | Three bullets: **Quality-first ISO workflow**, **AI-driven design insight**, **Integrated training pipeline**. | Section shows beneath cards. |
+| task-09 | Add "Why MSK" section | Three bullets: **Quality-first ISO workflow**, **AI-driven design insight**, **Integrated training pipeline**. | Section shows beneath cards. |
 
 ### ⚙️  Precision Works Page (`/precision-works`)
 
@@ -58,7 +58,7 @@ alwaysApply: false          # show only when you open this file explicitly
 |----|-------|-------------|-----------|
 | task-13 | Create route | `app/engineering/page.tsx`. | Route reachable. |
 | task-14 | Services sections | Headings & copy for CFD, FEA, AI-optimisation; placeholder images. | Three stacked sections render. |
-| task-15 | Industries list & CTA | Bullet list “Aerospace / Automotive / Marine / Medical” + Contact button. | List & CTA visible. |
+| task-15 | Industries list & CTA | Bullet list "Aerospace / Automotive / Marine / Medical" + Contact button. | List & CTA visible. |
 
 ### 🎓  Training Page (`/training`)
 
@@ -66,7 +66,7 @@ alwaysApply: false          # show only when you open this file explicitly
 |----|-------|-------------|-----------|
 | task-16 | Create route | `app/training/page.tsx`. | Route reachable. |
 | task-17 | Program cards | Four cards: CAD/CAM, CNC workshop, 3-D printing, Python-for-Engineers; include duration & mode tags. | Cards render in grid. |
-| task-18 | Audience & CTA | Paragraph for audience + “Enroll” button. | CTA visible under grid. |
+| task-18 | Audience & CTA | Paragraph for audience + "Enroll" button. | CTA visible under grid. |
 
 ### 🏢  About Page (`/about`)
 
@@ -81,7 +81,7 @@ alwaysApply: false          # show only when you open this file explicitly
 
 | id | title | description | done_when |
 |----|-------|-------------|-----------|
-| task-23 | Build contact form | Name, Email, Message inputs; static address “4-17/1 Cherlapally, Hyderabad 501301”; map placeholder. | Inputs accept text; address block visible. |
+| task-23 | Build contact form | Name, Email, Message inputs; static address "4-17/1 Cherlapally, Hyderabad 501301"; map placeholder. | Inputs accept text; address block visible. |
 
 ### 📦  Shared Data & Nav
 
