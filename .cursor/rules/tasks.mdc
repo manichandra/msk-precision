@@ -32,8 +32,8 @@ alwaysApply: false          # show only when you open this file explicitly
 
 | id | title | description | done_when |
 |----|-------|-------------|-----------|
-| task-04 | Build Navbar | `components/shared/Navbar.tsx`; desktop links (Home / Precision Works / Engineering / Training / About / Contact); mobile toggle via `useState`. | Links navigate; mobile menu opens & closes. |
-| task-05 | Build Footer | `components/shared/Footer.tsx`; © notice + tag-line “Precision in Every Dimension” + placeholder e-mail. | Footer visible on every route. |
+| ✅ task-04 | Build Navbar | `components/shared/Navbar.tsx`; desktop links (Home / Precision Works / Engineering / Training / About / Contact); mobile toggle via `useState`. | Links navigate; mobile menu opens & closes. |
+| task-05 | Build Footer | `components/shared/Footer.tsx`; © notice + tag-line "Precision in Every Dimension" + placeholder e-mail. | Footer visible on every route. |
 
 ### 🏠  Home Page (`/`)
 
