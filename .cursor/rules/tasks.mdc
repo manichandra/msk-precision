@@ -94,7 +94,7 @@ alwaysApply: false          # show only when you open this file explicitly
 
 | id | title | description | done_when |
 |----|-------|-------------|-----------|
-| task-26 | Configure GitHub Pages | `next.config.js` with `output:'export'`, proper `basePath`; add `"deploy"` script using `gh-pages`. | `npm run deploy` pushes `gh-pages` branch with no errors. |
+| ✅ task-26 | Configure GitHub Pages | `next.config.js` with `output:'export'`, proper `basePath`; add `"deploy"` script using `gh-pages`. | `npm run deploy` pushes `gh-pages` branch with no errors. |
 
 ### ✅  QA Pass
 
