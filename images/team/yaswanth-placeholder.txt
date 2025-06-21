@@ -1,0 +1,18 @@
+Yaswanth's Photo Placement
+========================
+
+This file serves as a placeholder for Yaswanth's professional photo.
+
+Instructions:
+1. Extract Yaswanth's photo from the WhatsApp screenshot
+2. Crop to focus on the face/upper body
+3. Resize to approximately 400x400 pixels
+4. Save as "yaswanth.jpg" in this directory
+5. Ensure good quality and professional appearance
+
+The photo will be displayed in:
+- About page team grid
+- Size: 80x80 pixels (rounded corners)
+- Format: JPG or PNG acceptable
+
+Once the actual photo is placed, this placeholder file can be removed. 
